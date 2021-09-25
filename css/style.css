@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;500&family=Suez+One&display=swap");
+
+.maintitle {
+  direction: rtl;
+  white-space: nowrap;
+}
+
+.taz_dropdown {
+  font-family: "Heebo", sans-serif;
+  font-weight: 500;
+  direction: rtl;
+}
+
+.title {
+  font-family: "Suez One", serif;
+  font-size: 4em;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+.password_div {
+  font-family: "Heebo", sans-serif;
+  direction: rtl;
+}
+
+.psw_btn {
+  font-family: "Heebo", sans-serif;
+  font-weight: 200;
+}
+
+.popupContent {
+  direction: rtl;
+  text-align: right;
+  font-family: "Heebo", sans-serif;
+  font-weight: 200;
+}
+
+.popupHeader {
+  font-family: "Heebo", sans-serif;
+  font-weight: 500;
+  font-size: larger;
+}
+
+.legend {
+  font-family: "Heebo", sans-serif;
+  font-weight: 200;
+  text-align: right;
+  direction: rtl;
+  padding: 6px 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  max-height: 300px;
+}
+.legend i {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.7;
+  text-align: right;
+  direction: rtl;
+}
+
+select {
+  font-family: "Heebo", sans-serif;
+  font-weight: 200;
+
+  direction: rtl;
+  text-align: right;
+  width: 200px;
+  height: 40px;
+}
+
+#generate_btn {
+  font-family: "Heebo", sans-serif;
+  font-weight: 500;
+  direction: rtl;
+  width: 200px;
+  height: 40px;
+}
