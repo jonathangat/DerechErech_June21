@@ -68,6 +68,28 @@ document.addEventListener("DOMContentLoaded", async () => {
   // add an empty taz layer
   let tazLayer = L.featureGroup();
 
+  // add a jurisdiction layer
+  let jurisLayer = L.featureGroup();
+
+  let fetchJuris = fetch(
+    "https://jonathang.carto.com/api/v2/sql?format=GeoJSON&q=SELECT muni_name, the_geom FROM muni_layer"
+  );
+
+  let parsedJuris = await fetchJuris.then((response) => response.json());
+
+  let jurisStyle = {
+    weight: 1,
+    opacity: 0.2,
+    color: "black",
+    fillOpacity: 0,
+  };
+
+  let jurisGeoJson = L.geoJson(parsedJuris, { style: jurisStyle }).addTo(
+    jurisLayer
+  );
+
+  jurisGeoJson.addTo(map);
+
   // generalise function to enter password and populate region dropdown
   async function populate_regions() {
     // define query variables
@@ -166,6 +188,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   async function generate_map() {
     // clear previous queries
     tazLayer.clearLayers();
+    jurisLayer.clearLayers();
 
     // define query variables
     let url = "https://jonathang.carto.com/api/v2/sql?";
@@ -281,7 +304,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // add geojson to map
     // calling the style method on each feature
-    geojson = L.geoJson(parsed_geojson, {
+
+    let geojson = L.geoJson(parsed_geojson, {
       style: style,
       onEachFeature: onEachFeature,
     }).addTo(tazLayer);
